@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Song from './components/Song';
+import PlaylistButton from './components/Playlist';
+import Login from './components/Login'
 
 function App() {
+  
+  const [data, setData] = useState([{}])
+
+  useEffect(() => {
+    fetch("/getTracks").then(
+      res => res.json()
+    ).then(
+      data => {
+        setData(data)
+        console.log(data)
+      }
+    )
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="title"> Past Month Top Songs (click to listen) </h1>
+      {data.map((song) => <Song previewURL={song.audio_sample_url} coverArt={song.cover_art} songName={song.name} albumName={song.album_name} artistName={song.artist}/>)}
+      <PlaylistButton />
     </div>
   );
 }
