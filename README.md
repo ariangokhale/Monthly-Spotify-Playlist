@@ -1,6 +1,6 @@
 # Monthly Playlist Creator
 
-### This application allows a user to log in to their Spotify account to see their top 15 most played songs from the past month and then create a playlist from it. Songs are listed in order from most played to least along with the artist name, album title, album cover, and like to an audio preview of the song (click song title). ik the ui is kinda whack but i'm gonna fix it at some point
+### This application allows a user to log in to their Spotify account to see their top 15 most played songs from the past month and then create a playlist from it. Songs are listed in order from most played to least along with the artist name, album title, album cover, and like to an audio preview of the song (click song title). [ik the ui is kinda whack but i'm gonna fix it at some point]
 
 ![Song List Displayed](<Screen Shot 2023-08-07 at 3.40.25 PM.png>)
 
